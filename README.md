@@ -1,24 +1,12 @@
-# projeto-02
+## Template responsivo
+  Projeto feito com vue 3 com o intuito de praticar designs responsivos.
 
-## Project setup
+## Instale as as dependencias com
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Rode o projeto com:
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
