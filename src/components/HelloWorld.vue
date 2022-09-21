@@ -1,59 +1,121 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <div class="head">
+      <header>
+        <div class="headerConteudo">
+          <p>FELIPE</p>
+
+          <nav>
+            <MenuIcon class="menuicon"></MenuIcon>
+            <span>HOME</span>
+            <span>ABOUT</span>
+            <span>CONTACT</span>
+          </nav>
+        </div>
+      </header>
+      <img src="https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ" alt="Algo">
+    </div>
+    <main></main>
+    <footer></footer>
   </div>
 </template>
 
 <script>
+import MenuIcon from 'vue-material-design-icons/Menu.vue'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: {
+    MenuIcon
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .hello{
+    display: grid;
+    grid-template: 70vh auto 30vh/ auto auto;
+    grid-template-areas: 'a a' 'b b' 'c c';
+  }
+  .head{
+    background-color:black;
+    width: 100%;
+    grid-area: a;
+    overflow: hidden;
+    display: grid;
+    align-items: flex-start;
+  }
+  .head > img{
+    width: 100%;
+    object-fit: contain;
+    margin-top: -100px;
+    position: absolute;
+    z-index: 3;
+  }
+  header{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(238,238,238,0.1);
+    z-index: 4;
+    display: grid;
+  }
+  .headerConteudo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .headerConteudo > p{
+    color: white;
+    font-family: 'Reem Kufi Ink', sans-serif;
+    margin: 20px;
+    font-size: 40px;
+  }
+  .headerConteudo > nav{  
+    font-family: 'Reem Kufi Ink', sans-serif;
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;    
+  }
+  .headerConteudo > nav > span{
+    margin: 20px;
+    color: white;
+  }
+  .headerConteudo > nav > span:hover{
+    color: orange;
+  }
+  .headerConteudo > nav > .menuicon {
+      display: none;
+    }
+  main{
+    background-color: white;
+    width: 100%;
+    height: 400px;
+    grid-area: b;
+  }
+  footer{
+    background-color: #222831;
+    width: 100%;
+    grid-area: c;
+  }
+
+  @media (max-width: 420px){
+    .head{
+      height: 60vh;
+    }
+    .head > img{
+      margin-top: 0px;
+      margin-left: -150px;
+      height: 60vh;
+      width: 200%;
+    }
+    .headerConteudo > nav > span {
+      display: none;
+    }
+    .headerConteudo > nav > .menuicon {
+      display: inline;
+    }
+  }
 </style>
