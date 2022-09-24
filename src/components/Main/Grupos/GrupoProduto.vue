@@ -1,29 +1,34 @@
 <template>
   <div class="grupo">
-    <img src="https://i.picsum.photos/id/995/3478/2310.jpg?hmac=vKDDYp0DkXNricuHfw_QJgD2VEGWFcrDYhoOXok4a-8" alt="algo">
+    <img :src="url" :alt="nome">
     <div class="descricaoGrupo">
-      <h2>Grupo 1</h2>
+      <h2>{{nome}}</h2>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'GrupoProduto',
+  props:{
+    url: String,
+    nome: String
+  }
 }
 </script>
 
 <style>
   .grupo{
-    width: 250px;
+    width: 25%;
     height: 200px;
     position: relative;
+    margin: 30px;
   }
   .grupo > img{
     object-fit: cover;
     height: 200px;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 5px;
   }
   .grupo > img:hover{
     opacity: 0.9;

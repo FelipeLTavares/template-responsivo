@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div class="head">
+    <!-- <div class="head">
       <header>
         <div class="headerConteudo">
           <p>FELIPE</p>
@@ -13,33 +13,38 @@
           </nav>
         </div>
       </header>
+      <nav v-show="false">
+            <span>HOME</span>
+            <span>ABOUT</span>
+            <span>CONTACT</span>
+          </nav>
       <img src="https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ" alt="Algo">
-    </div>
+    </div> -->
+    <CabecalhoGeral></CabecalhoGeral>
+
     <main>
-      <div class="sessaoGrupos">
-        <GrupoProduto id="grupo1"></GrupoProduto>
-        <GrupoProduto id="grupo2"></GrupoProduto>
-        <GrupoProduto id="grupo3"></GrupoProduto>
-      </div>
+      <ListaGrupos></ListaGrupos>
+
+      <ListaProdutos :lista="produtos"></ListaProdutos>
     </main>
     <footer></footer>
   </div>
 </template>
 
 <script>
-import MenuIcon from 'vue-material-design-icons/Menu.vue';
-import GrupoProduto from './GrupoProduto.vue';
+  /* import MenuIcon from 'vue-material-design-icons/Menu.vue'; */
+  import ListaProdutos from '@/components/Main/Produtos/ListaProdutos.vue';
+  import ListaGrupos from '@/components/Main/Grupos/ListaGrupos.vue';
+  import CabecalhoGeral from '@/components/Head/CabecalhoGeral.vue';
 
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
-  components: {
-    GrupoProduto,
-    MenuIcon
-  }
+  export default {
+    name: 'InicioView',
+    components: {
+    ListaProdutos,
+    ListaGrupos,
+    CabecalhoGeral
 }
+  }
 </script>
 
 <style scoped>
@@ -48,20 +53,21 @@ export default {
     grid-template: 90vh auto 30vh/ auto auto;
     grid-template-areas: 'a a' 'b b' 'c c';
   }
-  .head{
+/*   .head{
     background-color:black;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     grid-area: a;
   }
   .head > img{
     object-fit: cover;
     width: 100%;
+    height: 100vh;
   }
   header{
     width: 100%;
     height: 80px;
-    background-color: rgba(238,238,238,0.1);
+    background-color: rgba(238, 238, 238, 0.1);
     display: grid;
     position: absolute;
   }
@@ -90,13 +96,11 @@ export default {
   }
   .headerConteudo > nav > .menuicon {
       display: none;
-    }
+  } */
   main{
     background-color: white;
     width: 100%;
-    height: 400px;
     grid-area: b;
-    display: grid;
   }
   footer{
     background-color: #222831;
@@ -104,18 +108,17 @@ export default {
     grid-area: c;
   }
 
-  .sessaoGrupos{
-    margin-top: 60px;
-    width: 100%;
-    height: 350px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-evenly;
-  }
-  @media (max-width: 800px){
+/*   @media (max-width: 800px){
+    .hello{
+      grid-template: 50vh auto 30vh/ auto auto;
+      grid-template-areas: 'a a' 'b b' 'c c';
+    }
+    .head{
+      height: 50vh;
+      width: fit-content;
+    }
     .head > img{
-      height: 90vh;
-      min-width: 100%;
+      height: 50vh;
     }
     .headerConteudo > nav > span {
       display: none;
@@ -123,29 +126,9 @@ export default {
     .headerConteudo > nav > .menuicon {
       display: inline;
     }
-
-    .sessaoGrupos{
-      grid-template-columns: auto auto;
-    }
   }
 
   @media (max-width: 420px){
-    .head{
-      height: 60vh;
-    }
-    .head > img{
-      margin-top: 0px;
-      margin-left: -150px;
-      height: 60vh;
-      width: 200%;
-      object-fit: contain;
-    }
-    header{
-      height: 60px;
-    }
-    .headerConteudo{
-      height: 60px;
-    }
     .headerConteudo > nav > span {
       display: none;
     }
@@ -157,5 +140,5 @@ export default {
       font-family: 'Reem Kufi Ink', sans-serif;
       font-size: 30px;
     }
-  }
+  } */
 </style>
