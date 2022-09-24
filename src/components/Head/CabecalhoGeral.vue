@@ -4,7 +4,7 @@
         <p>FELIPE</p>
 
         <nav>
-          <MenuIcon></MenuIcon>
+          <MenuIcon class="menuicon"></MenuIcon>
           <span>HOME</span>
           <span>ABOUT</span>
           <span>CONTACT</span>
@@ -36,6 +36,7 @@ export default {
     width: 100%;
     height: 90vh;
     grid-area: a;
+    position: absolute;
   }
   .head > img{
     object-fit: cover;
@@ -71,5 +72,17 @@ export default {
   }
   header > nav > .menuicon {
       display: none;
+  }
+
+  @media (max-width: 480px) {
+    .head > img{
+      object-position: 30%;
+    }
+    header > nav > span{
+      display: none;
+    }
+    header > nav > .menuicon {
+      display: inline;
+    }
   }
 </style>
