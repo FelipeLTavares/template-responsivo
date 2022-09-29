@@ -5,7 +5,7 @@ import InicioView from '../views/InicioView.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'inicio',
     component: InicioView
   },
   //{

@@ -19,7 +19,7 @@ export default {
 
 <style>
   .grupo{
-    width: 25%;
+    width: 320px;
     height: 200px;
     position: relative;
     margin: 30px;

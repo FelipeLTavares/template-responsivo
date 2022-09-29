@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import GrupoProduto from './GrupoProduto.vue';
+import GrupoProduto from './Grupo.vue';
+
 export default {
     name: "SecaoGrupos",
     data() {
@@ -33,9 +34,9 @@ export default {
 <style>
   .secaoGrupos{
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 40px 0px;
+    display: grid;
+    grid-template: auto/auto auto auto;
+    justify-items: center;
+    margin: 50px 0;
   }
 </style>
