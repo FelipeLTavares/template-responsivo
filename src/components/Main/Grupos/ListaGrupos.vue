@@ -39,4 +39,13 @@ export default {
     justify-items: center;
     margin: 50px 0;
   }
+
+  @media(max-width:880px){
+    .secaoGrupos{
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 </style>

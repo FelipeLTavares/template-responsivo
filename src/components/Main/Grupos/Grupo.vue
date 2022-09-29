@@ -19,10 +19,11 @@ export default {
 
 <style>
   .grupo{
-    width: 320px;
+    width: 70%;
+    min-width: 200px;
     height: 200px;
     position: relative;
-    margin: 30px;
+    margin: 30px 0;
   }
   .grupo > img{
     object-fit: cover;

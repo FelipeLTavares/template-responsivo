@@ -35,8 +35,8 @@ export default {
     grid-template-columns: auto auto auto;
     justify-items: center;
     align-items: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 60px;
   }
   .secaoProdutos{
     width: 100%;
@@ -52,5 +52,17 @@ export default {
     background-color: gray;
     width: 90%;
     margin-left: 4%;
+  }
+
+  @media(max-width:880px){
+    .listaProdutos{
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media(max-width:600px){
+    .listaProdutos{
+      grid-template-columns: auto;
+    }
   }
 </style>

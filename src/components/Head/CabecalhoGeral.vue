@@ -74,9 +74,9 @@ export default {
       display: none;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     .head > img{
-      object-position: 30%;
+      object-position: 40%;
     }
     header > nav > span{
       display: none;
